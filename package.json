@@ -4,7 +4,7 @@
   "description": "An Implementation Of DDSketch, A Fast and Fully-Mergeable Quantile Sketch with Relative-Error Guarantees.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava"
   },
   "keywords": [
     "ddsketch",
@@ -15,6 +15,7 @@
   "author": "Hassy Veldstra <h@artillery.io>",
   "license": "MPL-2.0",
   "devDependencies": {
+    "ava": "^3.7.0",
     "prob.js": "^1.0.6"
   }
 }
