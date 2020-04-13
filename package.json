@@ -1,0 +1,20 @@
+{
+  "name": "sketches-js",
+  "version": "0.0.1",
+  "description": "An Implementation Of DDSketch, A Fast and Fully-Mergeable Quantile Sketch with Relative-Error Guarantees.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ddsketch",
+    "quantile",
+    "histogram",
+    "measurement"
+  ],
+  "author": "Hassy Veldstra <h@artillery.io>",
+  "license": "MPL-2.0",
+  "devDependencies": {
+    "prob.js": "^1.0.6"
+  }
+}
