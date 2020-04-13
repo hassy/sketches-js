@@ -1,6 +1,6 @@
 {
   "name": "sketches-js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An Implementation Of DDSketch, A Fast and Fully-Mergeable Quantile Sketch with Relative-Error Guarantees.",
   "main": "index.js",
   "scripts": {
