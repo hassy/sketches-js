@@ -14,6 +14,14 @@
   ],
   "author": "Hassy Veldstra <h@artillery.io>",
   "license": "MPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hassy/sketches-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hassy/sketches-js/issues",
+    "email": "npm@veldstra.org"
+  },
   "devDependencies": {
     "ava": "^3.7.0",
     "prob.js": "^1.0.6"
