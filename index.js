@@ -10,15 +10,8 @@ class DDSketch {
     this.maxNumBins = opts.maxNumBins || 2048;
     this.n = 0;
     this.gamma = (1 + this.alpha) / (1 - this.alpha);
-  }
 
-  insert(x) {
-    const i = Math.ceil(Math.log10(x) / Math.log10(this.gamma));
-    if (!this.bins[i]) {
-      this.bins[i] = 0;
-    }
-    this.bins[i]++;
-    this.n++;
+    this.numBins = 0;
   }
 
   collapseBins() {
@@ -34,8 +27,17 @@ class DDSketch {
   }
 
   add(x) {
-    this.insert(x);
-    this.collapseBins()
+    const i = Math.ceil(Math.log10(x) / Math.log10(this.gamma));
+    if (!this.bins[i]) {
+      this.bins[i] = 0;
+      this.numBins++;
+    }
+    this.bins[i]++;
+    this.n++;
+
+    if (this.numBins > this.maxNumBins) {
+      this.collapseBins();
+    }
   }
 
   quantile(q) {
@@ -63,12 +65,15 @@ class DDSketch {
       if (this.bins[i]) {
         this.bins[i] += other.bins[i];
       } else {
+        this.numBins++;
         this.bins[i] = other.bins[i];
       }
       this.n += other.bins[i];
     });
 
-    this.collapseBins()
+    if (this.numBins > this.maxNumBins) {
+      this.collapseBins();
+    }
   }
 }
 
