@@ -1,5 +1,7 @@
 * sketches-js
 
+[[https://circleci.com/gh/hassy/sketches-js.svg?style=svg][sketches-js]]
+
 An implementation of [[https://www.datadoghq.com/blog/engineering/computing-accurate-percentiles-with-ddsketch/][DDSketch]] for Node.js.
 
 DDSketch is a data structure for recording large amounts of numeric data and calculating quantiles over that data. It's designed to be fast, fully-mergeable and provide guarantees that a quantile value is within a configurable percentage threshold of the real value.
@@ -31,6 +33,9 @@ for (let i = 0; i < 1000; i++) {
 });
 #+END_SRC
 
+*** Limitations
+
+- ~sketches-js~ only works with positive numbers. Negative numbers, zeros, and NaN values are not supported.
 
 ** License
 
