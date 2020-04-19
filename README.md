@@ -1,23 +1,22 @@
-* sketches-js
+# sketches-js
 
-[[https://circleci.com/gh/hassy/sketches-js.svg?style=svg][sketches-js]]
+![build status](https://circleci.com/gh/hassy/sketches-js.svg?style=svg)
 
-An implementation of [[https://www.datadoghq.com/blog/engineering/computing-accurate-percentiles-with-ddsketch/][DDSketch]] for Node.js.
+An implementation of [DDSketch](https://www.datadoghq.com/blog/engineering/computing-accurate-percentiles-with-ddsketch/) for Node.js.
 
 DDSketch is a data structure for recording large amounts of numeric data and calculating quantiles over that data. It's designed to be fast, fully-mergeable and provide guarantees that a quantile value is within a configurable percentage threshold of the real value.
 
-** Implementation
+## Implementation
 
-The implementation is based on the official paper.
-http://www.vldb.org/pvldb/vol12/p2195-masson.pdf
+The implementation is based on the official paper: [DDSketch: A Fast and Fully-Mergeable Quantile Sketch with Relative-Error Guarantees](http://www.vldb.org/pvldb/vol12/p2195-masson.pdf) (PDF)
 
-** Usage
+## Usage
 
-#+BEGIN_SRC sh
+```sh
 npm install sketches-js
-#+END_SRC
+```
 
-#+BEGIN_SRC js
+```js
 const { DDSketch } = require('sketches-js');
 
 const sketch = new DDSketch({
@@ -31,12 +30,8 @@ for (let i = 0; i < 1000; i++) {
 [0.5, 0.75, 0.9, 0.95, 0.99].forEach(function(q) {
   console.log(`p${q * 100}: ${sketch.quantile(q)}`);
 });
-#+END_SRC
+```
 
-*** Limitations
-
-- ~sketches-js~ only works with positive numbers. Negative numbers, zeros, and NaN values are not supported.
-
-** License
+## License
 
 The source code is distributed under the terms of MPL 2.0 license.
