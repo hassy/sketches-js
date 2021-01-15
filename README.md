@@ -1,5 +1,11 @@
 # sketches-js
 
+# DEPRECATED
+
+Datadog have now released an official JS implementation of DDSketch: https://github.com/DataDog/sketches-js
+
+--------------
+
 ![build status](https://circleci.com/gh/hassy/sketches-js.svg?style=svg)
 
 An implementation of [DDSketch](https://www.datadoghq.com/blog/engineering/computing-accurate-percentiles-with-ddsketch/) for Node.js.
